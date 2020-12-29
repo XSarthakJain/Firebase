@@ -89,3 +89,21 @@ form.queries.addEventListener('change',(e) => {
     else if(form.queries.value == "order")
         OrderQueries();
 })
+
+// // Update 
+//In Update we update another value in respect of other and also create new one attribute
+// Id=""
+// function Update(){
+//     db.collection('cafes').doc(Id).update({
+//         'name':"FireBase"
+//     })
+// }
+
+//Set
+//In Set we Set anothet value and remove those which is not inside variables and also create new one attribute
+// function Set(){
+//     db.collection('cafes').doc(Id).set({
+//         'name':'FireBase',
+//         'city':'Google'
+//     })
+// }
