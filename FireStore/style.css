@@ -52,6 +52,14 @@ ul{
     background-color: #fff;
 }
 
+li p{
+    width:8px;
+    height:5px;
+    float: right;
+    padding-bottom:5px;
+    cursor: pointer;
+}
+
 #content-list li{
     margin-top:8px;
     padding:8px;
@@ -67,6 +75,6 @@ li span{
     background-color: #E9ECEF;
 }
 
-li span:nth-child(2){
+li span:nth-child(3){
     font-size: x-small;
 }
