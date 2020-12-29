@@ -25,12 +25,27 @@ function renderCafe(doc){
 
 }
 
-//Getting data
-db.collection('cafes').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        console.log(doc);
-        renderCafe(doc);
-    });
+// //Getting data
+// db.collection('cafes').get().then((snapshot) => {
+//     snapshot.docs.forEach(doc => {
+//         console.log(doc);
+//         renderCafe(doc);
+//     });
+// })
+
+// Getting Data at RealTime
+db.collection('cafes').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        if(change.type == 'added')
+            renderCafe(change.doc);
+        else if (change.type == "removed"){
+            console.log("Deletion");
+            let li = cafelist.querySelector('[data-id='+change.doc.id+']');
+            cafelist.removeChild(li);
+        }
+        
+    })
 })
 
 // Inserting data
@@ -59,7 +74,7 @@ function WhereQueries(){
 function OrderQueries(){
     db.collection('cafes').orderBy('name').get().then((snapshot) => {
         cafelist.innerHTML="";
-        snapshot.forEach(doc => {
+        snapshot.forEach(doc => { 
             renderCafe(doc);
         })
     })
@@ -69,7 +84,6 @@ function OrderQueries(){
 // Making Where Queries
 form.queries.addEventListener('change',(e) => {
     if (form.queries.value == "Where"){
-        alert("Where");
         WhereQueries();
     }
     else if(form.queries.value == "order")
