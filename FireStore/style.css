@@ -48,11 +48,25 @@ body h1{
    
 }
 
+ul{
+    background-color: #fff;
+}
+
 #content-list li{
     margin-top:8px;
     padding:8px;
     text-transform: capitalize;
     background-color: #E9ECEF;
     list-style: none;
+    color:grey;
 
+}
+
+li span{
+    display: block;
+    background-color: #E9ECEF;
+}
+
+li span:nth-child(2){
+    font-size: x-small;
 }
