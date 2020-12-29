@@ -2,6 +2,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    background-color:aquamarine ;
 
 }
 
@@ -9,35 +10,42 @@ body div{
     width:80%;
     margin:0 auto;
     height:60vh;
-    background-color: aquamarine;
+    background-color: #fff;
     margin-top:5%;
-    border-radius:25px 25px 0 0;
+    border-radius:5px 25px 5px 5px;
     padding:8px;
 }
 
-body div h1{
+body h1{
     text-align: center;
+    margin-top:4%;
+    color:#fff;
 }
 
 #form-data{
     margin:0 auto;
     text-align: center;
+    background-color: #ffff;
+    padding:8px;
+    
 }
 
 #form-data input[type="text"]{
     border:none;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid aquamarine;
     outline: none;
     padding:8px;
-    background-color: transparent;
+    background-color: #fff;
     margin-right:10%;
 }
 
 #form-data input[type="submit"]{
     padding:8px;
     background-color: #fff;
-    border:none;
+    border:2px solid aquamarine;
+    color:aquamarine;
     cursor: pointer;
+   
 }
 
 #content-list li{
