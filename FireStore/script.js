@@ -1,5 +1,6 @@
 const cafelist = document.querySelector('#content-list');
 const form = document.querySelector('#form-data');
+
 //Create element and render cafe
 function renderCafe(doc){
     let li = document.createElement('li');
@@ -43,4 +44,34 @@ form.addEventListener('submit',(e) => {
     form.city.value = '';
 })
 
+// Where Queries
+function WhereQueries(){
+    db.collection('cafes').where('city','==','AGRA').get().then((snapshot) =>{
+        cafelist.innerHTML="";
+        snapshot.forEach(doc => {
+            console.log(doc);
+            renderCafe(doc);
+        })
+    })
+}
 
+// Order Queries
+function OrderQueries(){
+    db.collection('cafes').orderBy('name').get().then((snapshot) => {
+        cafelist.innerHTML="";
+        snapshot.forEach(doc => {
+            renderCafe(doc);
+        })
+    })
+}
+
+
+// Making Where Queries
+form.queries.addEventListener('change',(e) => {
+    if (form.queries.value == "Where"){
+        alert("Where");
+        WhereQueries();
+    }
+    else if(form.queries.value == "order")
+        OrderQueries();
+})
