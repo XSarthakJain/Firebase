@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body div{
+    width:80%;
+    margin:0 auto;
+    height:60vh;
+    background-color: aquamarine;
+    margin-top:5%;
+    border-radius:25px 25px 0 0;
+    padding:8px;
+}
+
+body div h1{
+    text-align: center;
+}
+
+#form-data{
+    margin:0 auto;
+    text-align: center;
+}
+
+#form-data input[type="text"]{
+    border:none;
+    border-bottom: 2px solid red;
+    outline: none;
+    padding:8px;
+    background-color: transparent;
+    margin-right:10%;
+}
+
+#form-data input[type="submit"]{
+    padding:8px;
+    background-color: #fff;
+    border:none;
+    cursor: pointer;
+}
+
+#content-list li{
+    margin-top:8px;
+    padding:8px;
+    text-transform: capitalize;
+    background-color: #E9ECEF;
+    list-style: none;
+
+}
