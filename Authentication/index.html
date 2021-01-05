@@ -31,6 +31,7 @@
             <li><a href="#Login_Modal"  class="modal-trigger grey-text lighten-4">Login</a></li>
             <li><a href="#Account_Modal" class="modal-trigger grey-text lighten-4">Account</a></li>
             <li><a href="#Guide_Modal" class="modal-trigger grey-text lighten-4">Guide</a></li>
+            <li><a href="#LogOut" class="grey-text lighten-4" id="LogOut">LogOut</a></li>
           </ul>
         </div>
       </nav>
@@ -43,7 +44,7 @@
         <strong>Sign Up</strong>
         <form id="sign-up">
             <div class="input-field">
-                <input type="email" id="signup-email" required />
+                <input type="email" id="signup-email" required name/>
                 <label for="signup-email">Email Address</label>
             </div>
             <div class="input-field">
@@ -136,8 +137,6 @@
   
 
 </body>
-<script src="auth.js"></script>
-<script src="index.js"></script>
 
 <script>
     // Your web app's Firebase configuration
@@ -147,7 +146,15 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    
+    // Make Auth and FireBase References
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // Update FireBase Settings
+    db.settings({
+        timestampsInSnapshots:true
+    });
 </script>
+<script src="auth.js"></script>
+<script src="index.js"></script>
 </html>
